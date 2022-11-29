@@ -8,6 +8,13 @@ function getWeather(lat, lon) {
     var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=d1c747d37a69b86b9558f11ef1f6d753";
     console.log(lat);
     console.log(lon);
+    fetch(requestUrl)
+        .then(function(response) {
+        return response.json();
+        })
+        .then(function(data) {
+        console.log(data)
+        });
 }
 
 function getLatLon() {
