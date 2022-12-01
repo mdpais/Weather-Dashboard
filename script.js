@@ -10,7 +10,7 @@ var lat;
 var lon;
 
 function getWeather(lat, lon) {
-    var requestUrl = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=d1c747d37a69b86b9558f11ef1f6d753";
+    var requestUrl = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=d1c747d37a69b86b9558f11ef1f6d753";
     todayContent.textContent = "";
     fetch(requestUrl)
         .then(function(response) {
@@ -37,7 +37,7 @@ function getWeather(lat, lon) {
             todayContent.appendChild(todayWind);
             todayContent.appendChild(todayHumidity);
         })
-        var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&units=metric&appid=d1c747d37a69b86b9558f11ef1f6d753";
+        var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&units=metric&appid=d1c747d37a69b86b9558f11ef1f6d753";
         todayContent.textContent = "";
         fetch(requestUrl)
             .then(function(response) {
@@ -124,7 +124,6 @@ function addCity() {
     return;
     }
     cities.push(cityText);
-    console.log(cities);
     storeCities();
     renderCities();
 };
@@ -134,7 +133,6 @@ citiesList.addEventListener("click", function(event) {
     if (element.matches("button") === true) {
         cityInput.val(element.textContent);
         getLatLon();
-        console.log(element.textContent);
     }
   });
 
