@@ -10,3 +10,15 @@
 .today-content > p {
     margin-bottom: 0px;
 }
+
+.card {
+    padding-bottom: 3px;
+}
+
+.card-header {
+    padding-top: 20px;
+}
+
+p {
+    margin-bottom: 0px
+}
