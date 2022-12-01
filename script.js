@@ -10,7 +10,7 @@ var lat;
 var lon;
 
 function getWeather(lat, lon) {
-    var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&units=metric&appid=d1c747d37a69b86b9558f11ef1f6d753";
+    var requestUrl = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=d1c747d37a69b86b9558f11ef1f6d753";
     todayContent.textContent = "";
     fetch(requestUrl)
         .then(function(response) {
@@ -22,11 +22,11 @@ function getWeather(lat, lon) {
             var todayWind = document.createElement("p");
             var todayHumidity = document.createElement("p");
             var todayImage = document.createElement("img");
-            todayDate.textContent = data.city.name + ", " + data.city.country + " (" + dayjs(data.list[0].dt_txt).format("D MMMM YYYY") + ")";
-            todayTemp.textContent = "Temperature: " + data.list[0].main.temp + "°C";
-            todayWind.textContent = "Wind Speed: " + data.list[0].wind.speed + " kmph";
-            todayHumidity.textContent = "Humidity: " + data.list[0].main.humidity + "%";
-            todayImage.setAttribute("src", "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png");
+            todayDate.textContent = data.name + ", " + data.sys.country + " (" + dayjs().format("D MMMM YYYY") + ")";
+            todayTemp.textContent = "Temperature: " + data.main.temp + "°C";
+            todayWind.textContent = "Wind Speed: " + data.wind.speed + " kmph";
+            todayHumidity.textContent = "Humidity: " + data.main.humidity + "%";
+            todayImage.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
             todayDate.setAttribute("class", "card-title");
             todayTemp.setAttribute("class", "card-text");
             todayWind.setAttribute("class", "card-text");
@@ -36,10 +36,17 @@ function getWeather(lat, lon) {
             todayContent.appendChild(todayTemp);
             todayContent.appendChild(todayWind);
             todayContent.appendChild(todayHumidity);
-
+        })
+        var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&units=metric&appid=d1c747d37a69b86b9558f11ef1f6d753";
+        todayContent.textContent = "";
+        fetch(requestUrl)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
             for (var i = 1; i < 6; i++) {
                 dayContent[i-1].textContent = "";
-                var j = (i*8)-1;
+                var j = (i*8)-4;
                 var dayDate = document.createElement("h5");
                 var newDiv = document.createElement("div");
                 var dayTemp = document.createElement("p");
