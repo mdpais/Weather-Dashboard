@@ -77,7 +77,7 @@ function getWeather(lat, lon) {
 }
 
 function getLatLon() {
-    var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?q="+cityInput.val()+"&appid=d1c747d37a69b86b9558f11ef1f6d753";
+    var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?q="+cityInput.val()+"&appid=d1c747d37a69b86b9558f11ef1f6d753";
     fetch(requestUrl)
         .then(function(response) {
             if (response.status === 404) {
