@@ -124,7 +124,6 @@ function addCity() {
     return;
     }
     cities.push(cityText);
-    console.log(cities);
     storeCities();
     renderCities();
 };
@@ -134,7 +133,6 @@ citiesList.addEventListener("click", function(event) {
     if (element.matches("button") === true) {
         cityInput.val(element.textContent);
         getLatLon();
-        console.log(element.textContent);
     }
   });
 
