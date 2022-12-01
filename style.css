@@ -1,0 +1,24 @@
+.btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.weather-today, .weather-5day {
+    display: none;
+}
+
+.today-content > p {
+    margin-bottom: 0px;
+}
+
+.card {
+    padding-bottom: 8px;
+}
+
+.card-header {
+    padding-top: 20px;
+}
+
+p {
+    margin-bottom: 0px
+}
