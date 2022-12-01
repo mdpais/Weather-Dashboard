@@ -137,7 +137,6 @@ citiesList.addEventListener("click", function(event) {
   });
 
 init()
-// searchButton.on("click", getLatLon);
 searchButton.on("click", function(event) {
     event.preventDefault();
     getLatLon();
