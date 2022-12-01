@@ -22,7 +22,7 @@ OpenWeatherMap.org
  
 ##Link to deployed application
 
-https://mdpais.github.io/Weather-Forecast/
+https://mdpais.github.io/Weather-Dashboard/
 
 ##License
 
