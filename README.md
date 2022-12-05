@@ -18,7 +18,7 @@ OpenWeatherMap.org
 
 ##Screenshot
 
-![Screenshot](Screenshot.png)
+![Screenshot](./assets/images/Screenshot.png)
  
 ##Link to deployed application
 
